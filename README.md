@@ -33,7 +33,7 @@ cp .env.example .env
 NEXT_PUBLIC_DERIV_APP_ID=your_app_id_here
 
 # Optional: environment + affiliate attribution.
-NEXT_PUBLIC_DERIV_ENV=production
+NEXT_PUBLIC_DERIV_ENV=https://developers.deriv.com/docs/
 NEXT_PUBLIC_DERIV_REFERRAL_LINK=https://t.deriv.link?t=ML9CURMLSFR7
 
 # Optional: Google Drive integration (leave blank to disable).
@@ -45,7 +45,7 @@ GD_API_KEY=
 | Variable | Description |
 |---|---|
 | `NEXT_PUBLIC_DERIV_APP_ID` | Deriv app id issued for your registered app. Drives OAuth login/sign-up and WebSocket connections. Without it, Log in / Sign up stay disabled. |
-| `NEXT_PUBLIC_DERIV_ENV` | `production` for live Deriv endpoints; `preview` (or `staging`) for staging. Read by both the bot's URL resolver and `@deriv/core` for OAuth. |
+| 'https://developers.deriv.com/docs/ | `production` for live Deriv endpoints; `preview` (or `staging`) for staging. Read by both the bot's URL resolver and `@deriv/core` for OAuth. |
 | `NEXT_`https://t.deriv.link?t=ML9CURMLSFR7 | Affiliate referral link — appended as `affiliate_token` / `utm_campaign` on OAuth (optional). |
 | `GD_CLIENT_ID` / `GD_APP_ID` / `GD_API_KEY` | Google Drive integration credentials for saving/loading strategies (optional). |
 
