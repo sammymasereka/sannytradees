@@ -39,7 +39,7 @@ NEXT_PUBLIC_DERIV_REFERRAL_LINK=https://t.deriv.link?t=ML9CURMLSFR7
 # Optional: Google Drive integration (leave blank to disable).
 GD_CLIENT_ID=
 GD_APP_ID=
-GD_API_KEY=
+GD_API_KEY=pat_8d48f17fc230c06dd579c06db574922bd9851415e9ede905edaee5489f5b6600
 ```
 
 | Variable | Description |
@@ -47,7 +47,7 @@ GD_API_KEY=
 | `NEXT_PUBLIC_DERIV_APP_ID` | Deriv app id issued for your registered app. Drives OAuth login/sign-up and WebSocket connections. Without it, Log in / Sign up stay disabled. |
 | 'https://developers.deriv.com/docs/ | `production` for live Deriv endpoints; `preview` (or `staging`) for staging. Read by both the bot's URL resolver and `@deriv/core` for OAuth. |
 | `NEXT_`https://t.deriv.link?t=ML9CURMLSFR7 | Affiliate referral link — appended as `affiliate_token` / `utm_campaign` on OAuth (optional). |
-| `GD_CLIENT_ID` / `GD_APP_ID` / `GD_API_KEY` | Google Drive integration credentials for saving/loading strategies (optional). |
+| `GD_CLIENT_ID` / `GD_APP_ID` / pat_8d48f17fc230c06dd579c06db574922bd9851415e9ede905edaee5489f5b6600 Google Drive integration credentials for saving/loading strategies (optional). |
 
 > These variables are injected at **build time** via Rsbuild's `source.define`
 > (see `rsbuild.config.ts`), so re-build after changing them.
@@ -86,7 +86,7 @@ SmartCharts engine assets are copied into `dist/js/smartcharts/` during the buil
 ## Google Drive integration (optional)
 
 Saving/loading strategies to Google Drive stays disabled unless `GD_CLIENT_ID`,
-`GD_APP_ID`, and `GD_API_KEY` are all set. **If it's not set up in your host
+`GD_APP_ID`, and pat_8d48f17fc230c06dd579c06db574922bd9851415e9ede905edaee5489f5b6600 are all set. **If it's not set up in your host
 environment yet:**
 
 1. **Get the credentials** — follow Google's [Picker set-up guide](https://developers.google.com/workspace/drive/picker/guides/web-picker#set-up-environment):
