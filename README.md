@@ -30,24 +30,24 @@ cp .env.example .env
 
 ```env
 # Required: Deriv app id — drives OAuth login/sign-up and WebSocket connections.
-NEXT_PUBLIC_DERIV_APP_ID=349QgmyQQzI71XPolIBZp
+NEXT_PUBLIC_DERIV_APP_ID=your_app_id_here
 
 # Optional: environment + affiliate attribution.
-NEXT_PUBLIC_DERIV_ENV=https://developers.deriv.com/docs/
-NEXT_PUBLIC_DERIV_REFERRAL_LINK=https://t.deriv.link?t=ML9CURMLSFR7
+NEXT_PUBLIC_DERIV_ENV=production
+NEXT_PUBLIC_DERIV_REFERRAL_LINK=your_referral_link_here
 
 # Optional: Google Drive integration (leave blank to disable).
 GD_CLIENT_ID=
-GD_APP_ID=349QgmyQQzI71XPolIBZp
-GD_API_KEY=pat_8d48f17fc230c06dd579c06db574922bd9851415e9ede905edaee5489f5b6600
+GD_APP_ID=
+GD_API_KEY=
 ```
 
 | Variable | Description |
 |---|---|
-|'349QgmyQQzI71XPolIBZp` | Deriv app id issued for your registered app. Drives OAuth login/sign-up and WebSocket connections. Without it, Log in / Sign up stay disabled. |
-| 'https://developers.deriv.com/docs/ | `production` for live Deriv endpoints; `preview` (or `staging`) for staging. Read by both the bot's URL resolver and `@deriv/core` for OAuth. |
-| `NEXT_`https://t.deriv.link?t=ML9CURMLSFR7 | Affiliate referral link — appended as `affiliate_token` / `utm_campaign` on OAuth (optional). |
-| `GD_CLIENT_ID` /'349QgmyQQzI71XPolIBZp` / pat_8d48f17fc230c06dd579c06db574922bd9851415e9ede905edaee5489f5b6600 Google Drive integration credentials for saving/loading strategies (optional). |
+| `NEXT_PUBLIC_DERIV_APP_ID` | Deriv app id issued for your registered app. Drives OAuth login/sign-up and WebSocket connections. Without it, Log in / Sign up stay disabled. |
+| `NEXT_PUBLIC_DERIV_ENV` | `production` for live Deriv endpoints; `preview` (or `staging`) for staging. Read by both the bot's URL resolver and `@deriv/core` for OAuth. |
+| `NEXT_PUBLIC_DERIV_REFERRAL_LINK` | Affiliate referral link — appended as `affiliate_token` / `utm_campaign` on OAuth (optional). |
+| `GD_CLIENT_ID` / `GD_APP_ID` / `GD_API_KEY` | Google Drive integration credentials for saving/loading strategies (optional). |
 
 > These variables are injected at **build time** via Rsbuild's `source.define`
 > (see `rsbuild.config.ts`), so re-build after changing them.
@@ -86,12 +86,12 @@ SmartCharts engine assets are copied into `dist/js/smartcharts/` during the buil
 ## Google Drive integration (optional)
 
 Saving/loading strategies to Google Drive stays disabled unless `GD_CLIENT_ID`,
-'349QgmyQQzI71XPolIBZp`, and pat_8d48f17fc230c06dd579c06db574922bd9851415e9ede905edaee5489f5b6600 are all set. **If it's not set up in your host
+`GD_APP_ID`, and `GD_API_KEY` are all set. **If it's not set up in your host
 environment yet:**
 
 1. **Get the credentials** — follow Google's [Picker set-up guide](https://developers.google.com/workspace/drive/picker/guides/web-picker#set-up-environment):
    enable the **Google Picker API** + **Drive API**, then create an **OAuth 2.0
-   Client ID** (Web application) and an **API key**. Use the project number as '349QgmyQQzI71XPolIBZp  `.
+   Client ID** (Web application) and an **API key**. Use the project number as `GD_APP_ID`.
 2. **Authorize your domain** — add your deployed URL (e.g. `https://your-app.vercel.app`)
    to the OAuth client's **Authorized JavaScript origins** (exact origin; no wildcards).
 3. **Set them in your host env — not in source** — add the three vars to your host
